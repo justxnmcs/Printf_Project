@@ -14,6 +14,7 @@ int my_c(int width_value, char c)
 		}
 		my_putchar(c);
 	}
+	return (0);
 }
 
 int my_u(int width_value, int nb)
@@ -32,4 +33,5 @@ int my_u(int width_value, int nb)
 		}
 	}
 	my_put_nbr(nb);
+	return (0);
 }

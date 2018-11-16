@@ -47,6 +47,7 @@ int my_put_float(double nb, int width_value, int precision_value)
 		result = (int)nb;
 		my_put_nbr(result);
 	}
+	return (0);
 }
 
 int my_float_counter(double nb, int precision_value)
@@ -69,4 +70,5 @@ int my_display_counter(double nb, int width_value, int counter)
 			i += 1;
 		}
 	}
+	return (0);
 }

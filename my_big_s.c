@@ -22,4 +22,5 @@ int my_big_s(char *str)
             my_putchar(str[i]);
         i += 1;
     }
+    return (0);
 }

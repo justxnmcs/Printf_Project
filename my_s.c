@@ -18,6 +18,7 @@ int my_s(char *str, int width_value, int precision_value)
 	}
 	else 
 		my_sub_s(str, width_value, precision_value);
+	return (0);
 }
 
 int my_sub_s(char *str, int width_value, int precision_value)
@@ -33,6 +34,7 @@ int my_sub_s(char *str, int width_value, int precision_value)
 		return (0);
 	else
 		my_put_str(str);
+	return (0);
 }
 
 int my_s_loop(char *str, int width_value, int precision_value, int x)
@@ -42,6 +44,7 @@ int my_s_loop(char *str, int width_value, int precision_value, int x)
 		my_putchar(' ');
 		i += 1;
 	}
+	return (0);
 }
 
 int my_secondsub_s(char *str, int width_value, int precision_value)
@@ -56,4 +59,5 @@ int my_secondsub_s(char *str, int width_value, int precision_value)
 		my_putchar(str[j]);
 		j += 1;
 	}
+	return (0);
 }

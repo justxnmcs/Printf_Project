@@ -1,7 +1,7 @@
 
 #include "my.h"
 
-int flags_search(char *str, int i)
+/*int flags_search(char *str, int i)
 {
     int counter = 0;
     if (str[i] == '+' || str[i] == ' ' || str[i] == '-' || str[i] == '#') {
@@ -26,7 +26,7 @@ char *flag(char *str, int i)
         i += 1;
     }
     return (flags);
-}
+}*/
 
 int precision_search(char *str, int i)
 {

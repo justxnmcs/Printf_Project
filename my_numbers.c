@@ -29,6 +29,7 @@ int my_d_i_test(int width_value, int precision_value, int nb)
         if (precision_value == -1)
             return (1);
     }
+    return (0);
 }
 
 int my_sub_d_i(int width_value, int precision_value, int nb, int counter)
@@ -51,6 +52,7 @@ int my_sub_d_i(int width_value, int precision_value, int nb, int counter)
             }
         }
     }
+    return (0);
 }
 
 int my_d_i(int width_value, int precision_value, int nb)
@@ -74,4 +76,5 @@ int my_d_i(int width_value, int precision_value, int nb)
         }
     }
     my_put_nbr(ultimate_value(nb));
+    return (0);
 }

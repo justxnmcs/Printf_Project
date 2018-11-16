@@ -36,6 +36,7 @@ int base_convert(long nb, int b, int x)
     }
     my_revstr(str);;
     my_put_str(str);
+    return (0);
 }
 
 int base_convert_counter(long nb, int b, int x) 
@@ -65,4 +66,5 @@ int my_p(unsigned long nb)
     my_putchar('0');
     my_putchar('x');
     base_convert(nb, 16, 1);
+    return (0);
 }

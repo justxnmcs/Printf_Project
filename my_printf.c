@@ -34,7 +34,7 @@ int my_printf(char *str, ...)
             if (str[i] == 's')
                 my_s(va_arg(ap, char *), width_value, precision_value);
             if (str[i] == 'o')
-                my_s(base_convert(va_arg(ap, int), 8, 0), width_value, precision_value);
+                base_convert(va_arg(ap, int), 8, 0);
             if (str[i] == 'b')
                 base_convert(va_arg(ap, int), 2, 0);
             if (str[i] == 'x')
@@ -56,6 +56,7 @@ int my_printf(char *str, ...)
         i += 1;
     }
     va_end(ap);
+    return (0);
 }
 
 /*int main(void)
