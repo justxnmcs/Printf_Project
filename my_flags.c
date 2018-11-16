@@ -1,3 +1,6 @@
+
+#include "my.h"
+
 int flags_search(char *str, int i)
 {
     int counter = 0;
@@ -12,7 +15,7 @@ int flags_search(char *str, int i)
         return (0);
 }
 
-char *flag(char *str, int i) // bad return 
+char *flag(char *str, int i)
 {
     int n = 0;
     char flags[flags_search(str, i)];

@@ -5,6 +5,8 @@
 ** Printf
 */
 
+#include "my.h"
+
 void my_put_str(char *str)
 {
     int i = 0;

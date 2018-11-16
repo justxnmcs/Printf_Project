@@ -5,7 +5,9 @@
 ** libmy.a
 */
 
-int my_put_nbr(int nb)
+#include "my.h"
+
+long my_put_nbr(long nb)
 {
     int counter = 0;
     if (nb < 0) {

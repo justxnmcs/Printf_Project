@@ -5,6 +5,7 @@
 ** Printf
 */
 
+#include "my.h"
 #include <unistd.h>
 
 void my_putchar(char c)

@@ -5,6 +5,8 @@
 ** Piscine C Day06 - Task03
 */
 
+#include "my.h"
+
 char *my_revstr(char *str)
 {
     int i = 0;

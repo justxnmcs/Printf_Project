@@ -1,3 +1,6 @@
+
+#include "my.h"
+
 int multiplicator(int nb)
 {
 	int n = 1;

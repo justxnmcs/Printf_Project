@@ -1,3 +1,6 @@
+
+#include "my.h"
+
 int counter_calculator(int nb)
 {
     int counter = 0;
@@ -23,7 +26,7 @@ int ultimate_value(int nb)
 int my_d_i_test(int width_value, int precision_value, int nb)
 {
     if (width_value == 0) {
-        if (precision_value == 0)
+        if (precision_value == -1)
             return (1);
     }
 }

@@ -4,6 +4,8 @@
 ** File description:
 ** my_printf
 */
+
+#include "my.h"
 #include <stdarg.h>
 
 int my_printf(char *str, ...)
@@ -26,13 +28,13 @@ int my_printf(char *str, ...)
             if (str[i] == 'd' || str[i] == 'i')
                 my_d_i(width_value, precision_value, va_arg(ap, int));
             if (str[i] == 'u')
-                //my_u(width_value, precision_value, va_arg(ap, int));
+                my_u(width_value, va_arg(ap, int));
             if (str[i] == 'c')
-                my_putchar(va_arg(ap, int));
+                my_c(width_value, va_arg(ap, int));
             if (str[i] == 's')
-                my_put_str(va_arg(ap, char *));
+                my_s(va_arg(ap, char *), width_value, precision_value);
             if (str[i] == 'o')
-                base_convert(va_arg(ap, int), 8, 0);
+                my_s(base_convert(va_arg(ap, int), 8, 0), width_value, precision_value);
             if (str[i] == 'b')
                 base_convert(va_arg(ap, int), 2, 0);
             if (str[i] == 'x')
@@ -43,6 +45,10 @@ int my_printf(char *str, ...)
                 my_putchar('%');
             if (str[i] == 'f')
                 my_put_float(va_arg(ap, double), width_value, precision_value);
+            if (str[i] == 'p')
+                my_p(va_arg(ap, unsigned long));
+            if (str[i] == 'S')
+                my_big_s(va_arg(ap, char *));
 
         }
         else 
@@ -52,7 +58,7 @@ int my_printf(char *str, ...)
     va_end(ap);
 }
 
-int main(void)
+/*int main(void)
 {
-    my_printf("salut les amis %12.5d", 1023);
-}
+    my_printf("salut les amis %4c", 'e');
+}*/
