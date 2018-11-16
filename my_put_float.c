@@ -1,3 +1,9 @@
+/*
+** EPITECH PROJECT, 2018
+** my_put_float.c
+** File description:
+** Printf
+*/
 
 #include "my.h"
 
@@ -25,10 +31,9 @@ double ultimate_float_value(double nb)
 
 int my_put_float(double nb, int width_value, int precision_value)
 {	
-	if (precision_value == 0)
-		return (0);
+	if (precision_value == -1 || precision_value == 0)
+		precision_value = 6;
 	my_display_counter(nb, width_value, my_float_counter(nb, precision_value));
-
 	if (nb < 0)
 		my_putchar('-');
 	nb = ultimate_float_value(nb);
@@ -37,16 +42,9 @@ int my_put_float(double nb, int width_value, int precision_value)
 	my_put_nbr(d);
 	my_putchar('.');
 	nb = nb - d;
-	if (precision_value == -1) {
-		nb *= multiplicator(6);
-		result = (int)nb;
-		my_put_nbr(result);
-	}
-	else {
-		nb *= multiplicator(precision_value);
-		result = (int)nb;
-		my_put_nbr(result);
-	}
+	nb *= multiplicator(precision_value);
+	result = (int)nb;
+	my_put_nbr(result);
 	return (0);
 }
 

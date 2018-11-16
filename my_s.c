@@ -1,3 +1,9 @@
+/*
+** EPITECH PROJECT, 2018
+** my_s.c
+** File description:
+** Printf
+*/
 
 #include "my.h"
 

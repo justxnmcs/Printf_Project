@@ -1,18 +1,32 @@
+/*
+** EPITECH PROJECT, 2018
+** my_number.c
+** File description:
+** Printf
+*/
 
 #include "my.h"
 
-int counter_calculator(int nb)
+int counter_calculator(long nb)
 {
     int counter = 0;
-    int test = ultimate_value(nb);
-    while (test > 0) {
-        test = test / 10;
-        counter += 1;
+    long test = 0;
+    if (nb < 0)
+        test = ultimate_value(nb);
+    else
+        test = nb;
+    if (nb == 0)
+        counter = 1;
+    else {
+        while (test > 0) {
+            test = test / 10;
+            counter += 1;
+        }
     }
     return (counter);
 }
 
-int ultimate_value(int nb)
+int ultimate_value(long nb)
 {
     int result = -1;
     if (nb > 0)
@@ -23,58 +37,56 @@ int ultimate_value(int nb)
     }
 }
 
-int my_d_i_test(int width_value, int precision_value, int nb)
+int my_d_i(int width_value, int precision_value, long nb)
 {
-    if (width_value == 0) {
-        if (precision_value == -1)
-            return (1);
+    int is_neg = 0;
+    int counter = counter_calculator(nb);
+    if (nb == 0) {
+        if (precision_value == 0)
+            return (0);
     }
+    if (nb < 0) {
+        width_value -= 1;
+        nb = ultimate_value(nb);
+        is_neg = 1;
+    }
+    if (precision_value <= 0)
+        my_d_i_test(width_value, precision_value, nb, counter);
+    if (precision_value > counter)
+        my_sub_d_i(width_value, precision_value, nb, counter, is_neg);
     return (0);
 }
 
-int my_sub_d_i(int width_value, int precision_value, int nb, int counter)
+int my_sub_d_i(int width_value, int precision_value, long nb, int counter, int is_neg)
 {
-    int k = 0;
     int j = 0;
-    if (nb < 0)
-        width_value -= 1;
-    if (precision_value == -1) {
-        while (k != (width_value - counter)) {
+    int k = 0;
+    if ((width_value - precision_value) > 0) {
+        while (j < (width_value - precision_value)) {
             my_putchar(' ');
+            j += 1;
+        }
+        if (is_neg == 1)
+            my_putchar('-');
+        while (k < precision_value - counter) {
+            my_putchar('0');
             k += 1;
         }
     }
-    else {
-        if ((width_value - precision_value) > 0) {
-            while (j != (width_value - precision_value)) {
-                my_putchar(' ');
-                j += 1;
-            }
-        }
-    }
+    my_put_nbr(nb);
     return (0);
 }
 
-int my_d_i(int width_value, int precision_value, int nb)
+int my_d_i_test(int width_value, int precision_value, long nb, int counter)
 {
     int i = 0;
-    int test = ultimate_value(nb);
-    int counter = counter_calculator(nb);
-    if (precision_value == 0)
-        return (0);
-    if (my_d_i_test(width_value, precision_value, nb) == 1) {
-        my_put_nbr(nb);
-        return (0);
-    }
-    my_sub_d_i(width_value, precision_value, nb, counter);
-    if (nb < 0)
-        my_putchar('-');
-    if ((precision_value - counter) > 0) {
-        while (i != (precision_value - counter)) {
-            my_putchar('0');
+    if ((width_value - counter) > 0) {
+        while (i < (width_value - counter)) {
+            my_putchar(' ');
             i += 1;
         }
     }
-    my_put_nbr(ultimate_value(nb));
+    my_put_nbr(nb);
     return (0);
 }
+

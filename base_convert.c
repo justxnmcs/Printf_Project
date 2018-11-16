@@ -61,8 +61,16 @@ int base_convert_counter(long nb, int b, int x)
     return(counter);
 }
 
-int my_p(unsigned long nb)
+int my_p(unsigned long nb, int width_value)
 {
+    int counter = base_convert_counter(nb, 16, 1);
+    int i = 0;
+    if (width_value > (counter + 2)) {
+        while (i < (width_value - (counter + 2))) {
+            my_putchar(' ');
+            i += 1;
+        }
+    }
     my_putchar('0');
     my_putchar('x');
     base_convert(nb, 16, 1);

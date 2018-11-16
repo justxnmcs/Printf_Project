@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** my_printf.c
 ** File description:
-** my_printf
+** Printf
 */
 
 #include "my.h"
@@ -28,28 +28,27 @@ int my_printf(char *str, ...)
             if (str[i] == 'd' || str[i] == 'i')
                 my_d_i(width_value, precision_value, va_arg(ap, int));
             if (str[i] == 'u')
-                my_u(width_value, va_arg(ap, int));
+                my_u(width_value, precision_value, va_arg(ap, int));
             if (str[i] == 'c')
                 my_c(width_value, va_arg(ap, int));
             if (str[i] == 's')
                 my_s(va_arg(ap, char *), width_value, precision_value);
             if (str[i] == 'o')
-                base_convert(va_arg(ap, int), 8, 0);
+                my_b(va_arg(ap, int), 8, 0, width_value, precision_value);
             if (str[i] == 'b')
-                base_convert(va_arg(ap, int), 2, 0);
+                my_b(va_arg(ap, int), 2, 0, width_value, precision_value);
             if (str[i] == 'x')
-                base_convert(va_arg(ap, int), 16, 1);
+                my_b(va_arg(ap, int), 16, 1, width_value, precision_value);
             if (str[i] == 'X')
-                base_convert(va_arg(ap, int), 16, 2);
+                my_b(va_arg(ap, int), 16, 2, width_value, precision_value);
             if (str[i] == '%')
                 my_putchar('%');
             if (str[i] == 'f')
                 my_put_float(va_arg(ap, double), width_value, precision_value);
             if (str[i] == 'p')
-                my_p(va_arg(ap, unsigned long));
+                my_p(va_arg(ap, unsigned long), width_value);
             if (str[i] == 'S')
                 my_big_s(va_arg(ap, char *));
-
         }
         else 
             my_putchar(str[i]);
@@ -58,8 +57,3 @@ int my_printf(char *str, ...)
     va_end(ap);
     return (0);
 }
-
-/*int main(void)
-{
-    my_printf("salut les amis %4c", 'e');
-}*/
