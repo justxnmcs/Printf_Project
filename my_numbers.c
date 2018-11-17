@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2018
-** my_number.c
+** my_numbers.c
 ** File description:
 ** Printf
 */

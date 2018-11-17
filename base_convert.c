@@ -58,7 +58,7 @@ int base_convert_counter(long nb, int b, int x)
         i += 1;
         counter += 1;
     }
-    return(counter);
+    return (counter);
 }
 
 int my_p(unsigned long nb, int width_value)

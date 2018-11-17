@@ -1,9 +1,4 @@
-/*
-** EPITECH PROJECT, 2018
-** my_printf.c
-** File description:
-** Printf
-*/
+
 
 #include "my.h"
 #include <stdarg.h>

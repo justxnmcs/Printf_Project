@@ -9,11 +9,11 @@
 
 int my_getnbr(char const*str)
 {
-	int i = 0;
-	int isneg = 1;
-	int result = 0;
+    int i = 0;
+    int isneg = 1;
+    int result = 0;
 
-	while (str[i] <= ' ')
+    while (str[i] <= ' ')
         i += 1;
     if (str[i] == '+' || str[i] == '-') {
         if (str[i] == '-')
